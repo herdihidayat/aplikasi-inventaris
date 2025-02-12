@@ -28,7 +28,19 @@
                         </div>
                         <div class="form-group">
                             <label for="description" class="form-label">Deskripsi</label>
-                            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                            <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="sku" class="form-label">Kode Produk</label>
+                            <input type="text" name="sku" id="sku" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="price" class="form-label">Harga</label>
+                            <input type="text" inputmode="numeric" name="price" id="price" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="stock" class="form-label">Stock</label>
+                            <input type="text" inputmode="numeric" name="stock" id="stock" class="form-control">
                         </div>
                     </div>
                 </div>
