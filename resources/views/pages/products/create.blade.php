@@ -18,13 +18,19 @@
 @section('content')
     <div class="row">
         <div class="col">
-            <form action="">
+            {{-- @if ($errors->any())
+                @dd($errors->all())
+            @endif --}}
 
+            <form action="/products/store" method="POST">
+                @csrf
+                @method('POST')
                 <div class="card">
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name" class="form-label">Name Produk</label>
-                            <input type="text" name="name" id="name" class="form-control">
+                            <input type="text" name="name" id="name"
+                                class="form-control @error('name') is-invalid@enderror">
                         </div>
                         <div class="form-group">
                             <label for="description" class="form-label">Deskripsi</label>

@@ -27,4 +27,27 @@ class ProductController extends Controller
             "categories" => $categories,
         ]);
     }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            "name" => "required|min:3",
+            "description" => "nullable",
+            "price" => "required",
+            "stock" => "required",
+            "category_id" => "required",
+            "sku" => "required",
+        ]);
+
+        Product::create([
+            "name" => $request->input('name'),
+            "price" => $request->input('price'),
+            "stock" => $request->input('stock'),
+            "description" => $request->input('description'),
+            "sku" => $request->input('sku'),
+            "category_id" => $request->input('category_id'),
+        ]);
+
+        return redirect('/products');
+    }
 }
