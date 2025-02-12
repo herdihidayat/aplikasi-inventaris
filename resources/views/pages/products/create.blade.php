@@ -36,11 +36,25 @@
                         </div>
                         <div class="form-group">
                             <label for="price" class="form-label">Harga</label>
-                            <input type="text" inputmode="numeric" name="price" id="price" class="form-control">
+                            <input type="number" inputmode="numeric" name="price" id="price" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="stock" class="form-label">Stock</label>
-                            <input type="text" inputmode="numeric" name="stock" id="stock" class="form-control">
+                            <input type="number" inputmode="numeric" name="stock" id="stock" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="category_id" class="form-label">Kategori</label>
+                            <select name="category_id" id="category_id" class="form-control">
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-end">
+                            <a href="/products" class="btn btn-sm btn-outline-secondary mr-2">Batal</a>
+                            <button type="submit" class="btn btn-sm btn-primary">Simpan</button>
                         </div>
                     </div>
                 </div>
