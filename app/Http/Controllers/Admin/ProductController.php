@@ -50,4 +50,22 @@ class ProductController extends Controller
 
         return redirect('/products');
     }
+
+    public function edit($id)
+    {
+        $categories = Category::all();
+        $product = Product::findOrFail($id);
+        return view('pages.products.edit', [
+            "categories" => $categories,
+            "product" => $product,
+        ]);
+    }
+
+    public function delete($id)
+    {
+        $product = Product::where('id', $id);
+        $product->delete();
+
+        return redirect('/products');
+    }
 }

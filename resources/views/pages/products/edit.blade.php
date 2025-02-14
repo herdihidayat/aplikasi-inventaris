@@ -3,7 +3,7 @@
 @section('header')
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>Tambah Produk</h1>
+            <h1>Ubah Produk</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -22,9 +22,9 @@
                 @dd($errors->all())
             @endif --}}
 
-            <form action="/products/store" method="POST">
+            <form action="/products/{{ $product->id }}" method="POST">
                 @csrf
-                @method('POST')
+                @method('PUT')
                 <div class="card">
                     <div class="card-body">
                         <div class="form-group">
