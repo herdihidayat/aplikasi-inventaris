@@ -6,7 +6,12 @@
             'icon' => 'fas fa-th',
         ],
         (object) [
-            'title' => 'Produk',
+            'title' => 'Kategori',
+            'path' => 'categories',
+            'icon' => 'fas fa-th',
+        ],
+        (object) [
+            'title' => 'Produk/Barang',
             'path' => 'products',
             'icon' => 'fas fa-th',
         ],
