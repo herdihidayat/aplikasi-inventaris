@@ -1,14 +1,20 @@
 <?php
 
 // use App\Http\Admin\Controllers\CategoryController;
-use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\CategoryController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\CategoryController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 // Route::get('/', function () {
 //     return view('pages.products.index');
 // });s
+
+Route::get('/login', [AuthController]);
+
+Route::get('/', [DashboardController::class, 'index']);
 
 Route::get('/products', [ProductController::class, 'index']);
 Route::get('/products/create', [ProductController::class, 'create']);

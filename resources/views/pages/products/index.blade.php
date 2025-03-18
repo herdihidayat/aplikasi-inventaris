@@ -29,7 +29,7 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Produk</th>
+                                <th>Produk/Barang</th>
                                 <th>Deskripsi</th>
                                 <th>Kode</th>
                                 <th>Harga</th>
