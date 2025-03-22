@@ -7,12 +7,15 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Controllers\AuthController;
+
 
 // Route::get('/', function () {
 //     return view('pages.products.index');
 // });s
 
-Route::get('/login', [AuthController]);
+Route::get('/login', [AuthController::class, 'loginView']);
+Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/', [DashboardController::class, 'index']);
 
