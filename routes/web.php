@@ -18,9 +18,9 @@ Route::get('/login', [AuthController::class, 'loginView']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
 
-route::middleware(IsLogin::class)->group(function () {
+Route::get('/', [DashboardController::class, 'index']);
 
-    Route::get('/', [DashboardController::class, 'index']);
+route::middleware(IsLogin::class)->group(function () {
 
     Route::get('/products', [ProductController::class, 'index']);
     Route::get('/products/create', [ProductController::class, 'create']);

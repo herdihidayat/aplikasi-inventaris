@@ -23,6 +23,7 @@
             <a href="/"><b>Inventaris</b>V1</a>
         </div>
         <!-- /.login-logo -->
+
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Masuk untuk memulai aplikasi</p>
