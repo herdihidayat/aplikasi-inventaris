@@ -14,7 +14,6 @@
     </div>
 @endsection
 
-
 @section('content')
     @if (session('success'))
         <script>
