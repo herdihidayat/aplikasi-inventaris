@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('templates/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('templates/dist/css/adminlte.min.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="hold-transition login-page">
@@ -23,6 +24,15 @@
             <a href="/"><b>Inventaris</b>V1</a>
         </div>
         <!-- /.login-logo -->
+        @if (session('error-unauthorized'))
+            <script>
+                Swal.fire({
+                    title: "Terjadi Kesalahan",
+                    text: "{{ session('error-unauthorized') }}",
+                    icon: "error"
+                });
+            </script>
+        @endif
 
         <div class="card">
             <div class="card-body login-card-body">

@@ -35,7 +35,7 @@ class CategoryController extends Controller
         $category->slug = Str::slug($request->input('name'));
         $category->save();
 
-        return redirect('/categories');
+        return redirect('/categories')->with('success', 'Berhasil menambahkan kategori');
     }
 
     public function edit($id)
