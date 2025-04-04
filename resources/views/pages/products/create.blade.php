@@ -16,11 +16,17 @@
 
 
 @section('content')
+    @if ($errors->any())
+        <script>
+            Swal.fire({
+                title: "Terjadi Kesalahan!",
+                text: " @foreach ($errors->all() as $error) {{ $error }} @endforeach",
+                icon: "error"
+            });
+        </script>
+    @endif
     <div class="row">
         <div class="col">
-            {{-- @if ($errors->any())
-                @dd($errors->all())
-            @endif --}}
 
             <form action="/products/store" method="POST">
                 @csrf

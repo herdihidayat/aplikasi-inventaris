@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products  = Product::with('category')->paginate(10);
+        $products  = Product::with('category')->latest()->paginate(10);
 
         return view('pages.products.index', [
             "products" => $products,
@@ -37,11 +37,18 @@ class ProductController extends Controller
             "stock" => "required",
             "category_id" => "required",
             "sku" => "required",
+        ], [
+            "name.required" => "Nama produk/barang harus diisi!",
+            "name.min" => "Minimal 3 karakter!",
+            "price.required" => "Harga harus diisi!",
+            "stock.required" => "Stok harus diisi!",
+            "category_id.required" => "Kategori harus diisi!",
+            "sku.required" => "kode produk/barang harus diisi!",
         ]);
 
         Product::create($validated);
 
-        return redirect('/products');
+        return redirect('/products')->with('success', 'Berhasil menambahkan produk/barang');
     }
 
     public function edit($id)
@@ -64,11 +71,18 @@ class ProductController extends Controller
             "stock" => "required",
             "category_id" => "required",
             "sku" => "required",
+        ], [
+            "name.required" => "Nama produk/barang harus diisi!",
+            "name.min" => "Minimal 3 karakter!",
+            "price.required" => "Harga harus diisi!",
+            "stock.required" => "Stok harus diisi!",
+            "category_id.required" => "Kategori harus diisi!",
+            "sku.required" => "kode produk/barang harus diisi!",
         ]);
 
         Product::where('id', $id)->update($validated);
 
-        return redirect('/products');
+        return redirect('/products')->with('success', 'Berhasil mengubah produk/barang');
     }
 
 
@@ -77,6 +91,6 @@ class ProductController extends Controller
         $product = Product::where('id', $id);
         $product->delete();
 
-        return redirect('/products');
+        return redirect('/products')->with('success', 'Berhasil menghapus produk/barang');
     }
 }

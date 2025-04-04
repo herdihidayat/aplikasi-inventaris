@@ -63,6 +63,7 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @include('pages.categories.delete-confirmation')
                             @endforeach
                         </tbody>
                     </table>
