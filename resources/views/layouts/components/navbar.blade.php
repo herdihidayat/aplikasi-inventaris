@@ -15,12 +15,17 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
         <!-- Navbar Search -->
-        <form action="/logout" method="post">
+        {{-- <form action="/logout" method="post">
             @csrf
             @method('POST')
             <button type="submit" class="btn btn-outline-danger btn-sm">
                 Log Out
             </button>
-        </form>
+        </form> --}}
+        <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#modal-logout">
+            Log Out
+        </button>
+
     </ul>
 </nav>
+@include('pages.auth.logout-confirmation')

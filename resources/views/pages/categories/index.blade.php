@@ -53,13 +53,17 @@
                                         <div class="d-flex">
                                             <a href="/categories/edit/{{ $category->id }}"
                                                 class="btn btn-sm btn-warning mr-2">Ubah</a>
-                                            <form action="/categories/{{ $category->id }}" method="POST">
+                                            {{-- <form action="/categories/{{ $category->id }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-sm btn-danger">
                                                     Hapus
                                                 </button>
-                                            </form>
+                                            </form> --}}
+                                            <button type="submit" class="btn btn-sm btn-danger" data-toggle="modal"
+                                                data-target="#modal-delete-{{ $category->id }}">
+                                                Hapus
+                                            </button>
                                         </div>
                                     </td>
                                 </tr>

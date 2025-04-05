@@ -1,11 +1,11 @@
-<div class="modal fade" id="modal-delete-{{ $category->id }}">
+<div class="modal fade" id="modal-delete-{{ $product->id }}">
     <div class="modal-dialog">
-        <form action="/categories/{{ $category->id }}" method="post">
+        <form action="/products/{{ $product->id }}" method="post">
             @csrf
             @method('DELETE')
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Hapus Katgeori</h4>
+                    <h4 class="modal-title">Hapus Barang</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
